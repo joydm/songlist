@@ -1,0 +1,4 @@
+name: songlist
+recipe: laravel
+config:
+  webroot: public
