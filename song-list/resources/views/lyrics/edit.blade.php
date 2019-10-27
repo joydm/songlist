@@ -1,15 +1,6 @@
 @extends('theme.sb-admin.default')
 @section('content')
-	<style type="text/css">
-		.btn-cancel {
-			padding: 8px 15px;
-			background-color: #6c757d;
-			color:#FFFFFF !important;
-			border:1px solid #6c757d;
-			border-radius:4px;
-			text-decoration: none;
-		}
-	</style>
+
 	<div class="container-fluid">
 		
         <!-- Page Heading -->
@@ -59,9 +50,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
-                    <!-- <button type="button" class="btn"> -->
-					  <a href="/lyrics" class="btn-cancel"> Cancel </a>
-					<!-- </button> -->
+					<a href="/lyrics" class="btn-cancel"> Cancel </a>
 
                 </form>
 

@@ -21,7 +21,7 @@
 		</div>
 		<!-- /.row -->
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-12">
 				<div class="col-sm-12">
 				  @if(session()->get('success'))
 				    <div class="alert alert-success">
@@ -34,26 +34,25 @@
 				</div>  
 				<h2>List of Songs</h2>
 				<div class="table-responsive">
-					<table class="table table-bordered table-hover">
+					<table id="dtSongList" class="display" style="width:100%">
 						<thead>
 							<tr>
-								<th>ID</th>
 								<th>Title</th>
 								<th>Artist</th>
 								<th>Song Lyrics</th>
 								<th>Date Created</th>
-								<th colspan = 2>Actions</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($lyrics as $lyric)
 								<tr>
-									<td>{{$lyric->id}}</td>
 									<td>{{$lyric->title}}</td>
 									<td>{{$lyric->artist}}</td>
 									<td>{{$lyric->song_lyrics}}</td>
 									<td>{{$lyric->created_at}}</td>
-									<td>
+									<td align="right">
 										<a href="{{ route('lyrics.edit',$lyric->id)}}" class="btn btn-primary">Edit</a>
 									</td>
 									<td>
@@ -69,7 +68,8 @@
 					</table>
 				</div>
 			</div>
-			<div class="col-lg-6"></div>
+			</div>
 		</div>
 	</div>
 @endsection
+

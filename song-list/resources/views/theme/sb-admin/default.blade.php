@@ -20,6 +20,9 @@
     <!-- Morris Charts CSS -->
     <link href="{!! asset('css/plugins/morris.css') !!}" rel="stylesheet">
 
+    <!-- Data Table CSS -->
+    <link href="{!! asset('css/plugins/datatable/jquery.dataTables.min.css') !!}" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="{!! asset('font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
 
@@ -29,6 +32,17 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Buttons for the form -->
+      <style type="text/css">
+        .btn-cancel {
+          padding: 8px 15px;
+          background-color: #6c757d;
+          color:#FFFFFF !important;
+          border:1px solid #6c757d;
+          border-radius:4px;
+          text-decoration: none;
+        }
+    </style>
 
 </head>
 
@@ -36,26 +50,50 @@
 
     <div id="wrapper">
 
-            @include('theme.sb-admin.header')
+        @include('theme.sb-admin.header')
 
-            <div id="page-wrapper">
-                @yield('content')
-            </div>
-            <!-- /#page-wrapper -->
-
-            
-            
-
+        <div id="page-wrapper">
+            @yield('content')
+        </div>
+        <!-- /#page-wrapper -->
    </div>
    <!-- /#wrapper --
 
       <!-- jQuery -->
    <script src="{!! asset('js/jquery.js') !!}"></script>
+
+   <!-- Data Table JavaScript -->
+   <script src="{!! asset('js/plugins/datatable/jquery.dataTables.min.js') !!}"></script>
+
+
    <!-- Bootstrap Core JavaScript -->
    <script src="{!! asset('js/bootstrap.min.js') !!}"></script>
-   <!-- Morris Charts JavaScript -->
+    <script type="text/javascript">
+       
+       $(document).ready(function() {
+            $('#dtSongList').DataTable({
+                // Disable Actions column for sorting
+                "aoColumns": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    { "bSortable": false },
+                    { "bSortable": false }
+                ]
+            });
+        });
+
+       $(document).ready(function() {
+    $('#example').DataTable();
+} );
+   </script>
+   
+
+   <<!-- !-- Morris Charts JavaScript -->
    <script src="{!! asset('js/plugins/morris/raphael.min.js') !!}"></script>
    <script src="{!! asset('js/plugins/morris/morris.min.js') !!}"></script>
-   <script src="{!! asset('js/plugins/morris/morris-data.js') !!}"></script>
+   <script src="{!! asset('js/plugins/morris/morris-data.js') !!}"></script> -->
+
 </body>
 </html>
