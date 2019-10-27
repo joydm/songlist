@@ -27,3 +27,4 @@ Route::get('/logout', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('lyrics', 'LyricController');
