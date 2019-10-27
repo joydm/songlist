@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+// Route::get('/demo', function () {
+//    return view('demo');
+// });
+
+Route::get('/dashboard', 'HomeController@dashboard');
+Route::get('/', 'ListController@show');
+
+Auth::routes();
+Route::get('/logout', function () {
+	Auth::logout();
+    return redirect('/');
 });
 
-Route::get('/demo', function () {
-   return view('demo');
-});
-
-Route::get('dashboard', 'HomeController@dashboard');
+Route::get('/home', 'HomeController@index')->name('home');

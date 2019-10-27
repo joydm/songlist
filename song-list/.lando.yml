@@ -2,3 +2,19 @@ name: songlist
 recipe: laravel
 config:
   webroot: public
+proxy:
+  adminer:
+  - adminer.songlist.lndo.site
+services:
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    portforward: true
+  database:
+    type: mysql:5.7
+    creds:
+      user: mysql100
+      password: mysql200
+      database: songlist
