@@ -13,18 +13,13 @@
 
 
 
-// Route::get('/demo', function () {
-//    return view('demo');
-// });
-
-Route::get('/dashboard', 'HomeController@dashboard');
-Route::get('/', 'ListController@show');
-
 Auth::routes();
 Route::get('/logout', function () {
 	Auth::logout();
     return redirect('/');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index');
+
 Route::resource('lyrics', 'LyricController');
